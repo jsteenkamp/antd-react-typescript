@@ -1,4 +1,4 @@
-export const ErrorFallback = ({ error, resetErrorBoundary }) => {
+export const ErrorFallback = ({ error, resetErrorBoundary }: { error?: any; resetErrorBoundary?: any }) => {
   return (
     <div role='alert'>
       <p>Something went wrong:</p>
@@ -7,4 +7,3 @@ export const ErrorFallback = ({ error, resetErrorBoundary }) => {
     </div>
   );
 };
-

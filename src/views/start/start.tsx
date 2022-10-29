@@ -3,10 +3,14 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { layoutState } from '../../state/layout';
 import './start.less';
 
+import styles from './start.module.less';
+
+const result : string[] = [];
+
 const PANELS = ['top', 'bottom', 'left', 'right', 'main'];
 
-const Button = ({ panel }) => {
-  const buttonRef = useRef([]);
+const Button = ({ panel }: { panel?: string }) => {
+  const buttonRef = useRef(result);
   const [panels, setPanels] = useRecoilState(layoutState);
 
   const togglePanel = (panel) => (event) => {
@@ -29,7 +33,7 @@ const Button = ({ panel }) => {
 
 const Controls = () => {
   return (
-    <div className="panel-controls" style={{ display: 'flex', gap: '4px' }}>
+    <div className='panel-controls' style={{ display: 'flex', gap: '4px' }}>
       {PANELS.map((panel) => (
         <Button key={`button-${panel}`} panel={panel} />
       ))}
@@ -44,23 +48,23 @@ export const Start = () => {
   return (
     <div className={`layout-wrapper ${containerStyles}`}>
       <Controls />
-      <header className="header">
-        <p>Header</p>
+      <header className='header'>
+        <p className={styles.heading}>Header</p>
       </header>
 
-      <nav className="nav">
+      <nav className='nav'>
         <p>Nav</p>
       </nav>
 
-      <main className="main">
+      <main className='main'>
         <p>Main</p>
       </main>
 
-      <aside className="aside">
+      <aside className='aside'>
         <p>Aside</p>
       </aside>
 
-      <footer className="footer">
+      <footer className='footer'>
         <p>Footer</p>
       </footer>
     </div>
