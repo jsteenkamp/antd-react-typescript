@@ -1,0 +1,237 @@
+@header-height: 75px;
+@footer-height: 180px;
+@navbar-width: 80px;
+@sidebar-width: 460px;
+@container-border-radius: 12px;
+
+@blue-2: #bae7ff;
+@gray-0: #f0f0f0;
+@gray-2: #d9d9d9;
+@gray-4: #bfbfbf;
+@gray-5: #8c8c8c;
+@indigo-2: #f0f5ff;
+
+.container {
+  border-radius: @container-border-radius;
+  transition: all 0.25s ease, opacity 0.15s ease;
+}
+
+.layout-wrapper {}
+
+.header {
+  .container;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: @header-height;
+  background-color: @blue-2;
+}
+
+.nav {
+  .container;
+  position: absolute;
+  top: @header-height;
+  bottom: @footer-height;
+  left: 0;
+  width: @navbar-width;
+  background-color: @gray-2;
+}
+
+.main {
+  .container;
+  position: absolute;
+  top: @header-height;
+  bottom: @footer-height;
+  left: @navbar-width;
+  right: @sidebar-width;
+  background-color: @gray-0;
+}
+
+.aside {
+  .container;
+  position: absolute;
+  top: @header-height;
+  bottom: @footer-height;
+  right: 0;
+  left: calc(100% - @sidebar-width);
+  background-color: @gray-2;
+}
+
+.footer {
+  .container;
+  position: absolute;
+  bottom: 0;
+  height: @footer-height;
+  left: 0;
+  right: 0;
+  background-color: @blue-2;
+}
+
+/* header */
+
+.show-top .header {
+  height: @header-height;
+  opacity: 1;
+}
+
+.show-top .nav,
+.show-top .main,
+.show-top .aside {
+  top: @footer-height;
+}
+
+.hide-top .header {
+  height: 0;
+  opacity: 0;
+}
+
+.hide-top .nav,
+.hide-top .main,
+.hide-top .aside {
+  top: 0;
+}
+
+/* footer */
+
+.show-bottom .footer {
+  height: @footer-height;
+  opacity: 1;
+}
+
+.show-bottom .nav,
+.show-bottom .main,
+.show-bottom .aside {
+  bottom: @footer-height;
+}
+
+.hide-bottom .footer {
+  height: 0;
+  opacity: 0;
+}
+
+.hide-bottom .nav,
+.hide-bottom .main,
+.hide-bottom .aside {
+  bottom: 0;
+}
+
+/* navbar */
+
+.show-left .nav {
+  right: @navbar-width;
+  opacity: 1;
+}
+
+.show-left .main {
+  left: @navbar-width;
+}
+
+.hide-left .nav {
+  right: 0;
+  opacity: 0;
+}
+
+.hide-left .main {
+  left: 0;
+}
+
+/* sidebar */
+
+.show-right .aside {
+  left: calc(100% - @sidebar-width);
+  opacity: 1;
+}
+
+.show-right .main {
+  right: 460px;
+}
+
+.hide-right .aside {
+  left: 100vw;
+  opacity: 0;
+}
+
+.hide-right .main {
+  right: 0;
+}
+
+/* panel control buttons */
+
+.panel-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 100;
+  padding: 12px;
+  background-color: rgba(169, 169, 169, 0.28);
+  border-radius: 6px;
+}
+
+.button {
+  width: 36px;
+  height: 24px;
+  padding: 2px 4px;
+  background-color: @gray-0;
+  border: 1px solid @gray-5;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.button-top {
+  .button;
+  box-shadow: inset 0 6px 0 0 @gray-4;
+  &:hover {
+    box-shadow: inset 0 6px 0 0 @gray-5;
+  }
+}
+
+.button-bottom {
+  .button;
+  box-shadow: inset 0 -6px 0 0 @gray-4;
+  &:hover {
+    box-shadow: inset 0 -6px 0 0 @gray-5;
+  }
+}
+
+.button-left {
+  .button;
+  box-shadow: inset 6px 0 0 0 @gray-4;
+  &:hover {
+    box-shadow: inset 6px 0 0 0 @gray-5;
+  }
+}
+
+.button-right {
+  .button;
+  box-shadow: inset -12px 0 0 0 @gray-4;
+  &:hover {
+    box-shadow: inset -12px 0 0 0 @gray-5;
+  }
+}
+
+.button-main {
+  .button;
+  background-color: @gray-4;
+  box-shadow: inset 0 0 0 6px @gray-0;
+  &:hover {
+    background-color: @gray-5;
+  }
+}
+
+.hide-main .button-top,
+.hide-main .button-bottom,
+.hide-main .button-left,
+.hide-main .button-right {
+  display: none;
+}
+
+/* misc */
+
+p {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: @indigo-2;
+  border-radius: 9999px;
+  text-align: center;
+}

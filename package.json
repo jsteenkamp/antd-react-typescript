@@ -1,0 +1,78 @@
+{
+  "name": "react-typescript-antd",
+  "version": "1.0.0",
+  "private": false,
+  "license": "MIT",
+  "dependencies": {
+    "@ant-design/charts": "^1.4.2",
+    "@ant-design/icons": "^4.7.0",
+    "@craco/craco": "^6.4.5",
+    "antd": "^4.23.6",
+    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "clsx": "^1.2.1",
+    "craco-antd": "^2.0.0",
+    "dayjs": "^1.11.6",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
+    "react-icons": "^4.6.0",
+    "react-scripts": "^5.0.1",
+    "recoil": "^0.7.6",
+    "wouter": "^2.7.5"
+  },
+  "scripts": {
+    "start": "GENERATE_SOURCEMAP=false craco start",
+    "build": "craco build",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json'}",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "keywords": [
+    "react",
+    "antd",
+    "typescript",
+    "css-modules",
+    "eslint",
+    "prettier"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not IE 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 edge version"
+    ]
+  },
+  "engines": {
+    "node": ">=14",
+    "yarn": ">=1.22.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.7",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  }
+}
