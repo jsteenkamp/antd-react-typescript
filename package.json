@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "GENERATE_SOURCEMAP=false craco start",
-    "build": "craco build",
+    "build": "CI=false craco build",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json'}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
