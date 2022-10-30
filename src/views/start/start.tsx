@@ -4,9 +4,19 @@ import { layoutState } from '../../state/layout';
 import './start.less';
 import styles from './start.module.less';
 
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
 
-const PANELS : string[] = ['top', 'bottom', 'left', 'right', 'main'];
+const PANELS: string[] = ['top', 'bottom', 'left', 'right', 'main'];
+
+const InstaCard = () => (
+  <Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt='example' src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' />}
+  >
+    <Card.Meta title='Europe Street beat' description='www.instagram.com' />
+  </Card>
+);
 
 const PanelButton = ({ panel }: { panel: string }) => {
   const buttonRef = useRef<string[]>([]);
@@ -59,6 +69,7 @@ export const Start = () => {
       <main className='main'>
         <p>Main</p>
         <Button>Button</Button>
+        <InstaCard />
       </main>
 
       <aside className='aside'>
