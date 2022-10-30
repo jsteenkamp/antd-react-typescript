@@ -2,20 +2,18 @@ import { useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { layoutState } from '../../state/layout';
 import './start.less';
-
 import styles from './start.module.less';
 
-const result : string[] = [];
+const PANELS : string[] = ['top', 'bottom', 'left', 'right', 'main'];
 
-const PANELS = ['top', 'bottom', 'left', 'right', 'main'];
-
-const Button = ({ panel }: { panel?: string }) => {
-  const buttonRef = useRef(result);
+const Button = ({ panel }: { panel: string }) => {
+  const buttonRef = useRef<string[]>([]);
   const [panels, setPanels] = useRecoilState(layoutState);
 
   const togglePanel = (panel) => (event) => {
     event.preventDefault();
     if (panel === 'main') {
+      // store previous panel state on ref - could use Recoil
       if (panels.includes('main')) {
         setPanels(buttonRef.current);
         buttonRef.current = [];

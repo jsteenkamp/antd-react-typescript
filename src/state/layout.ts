@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-export const layoutState = atom({
+export const layoutState = atom<string[]>({
   key: 'layoutState',
   default: [],
 });
