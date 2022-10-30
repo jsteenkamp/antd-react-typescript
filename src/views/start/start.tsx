@@ -4,9 +4,11 @@ import { layoutState } from '../../state/layout';
 import './start.less';
 import styles from './start.module.less';
 
+import { Button } from 'antd';
+
 const PANELS : string[] = ['top', 'bottom', 'left', 'right', 'main'];
 
-const Button = ({ panel }: { panel: string }) => {
+const PanelButton = ({ panel }: { panel: string }) => {
   const buttonRef = useRef<string[]>([]);
   const [panels, setPanels] = useRecoilState(layoutState);
 
@@ -33,7 +35,7 @@ const Controls = () => {
   return (
     <div className='panel-controls' style={{ display: 'flex', gap: '4px' }}>
       {PANELS.map((panel) => (
-        <Button key={`button-${panel}`} panel={panel} />
+        <PanelButton key={`button-${panel}`} panel={panel} />
       ))}
     </div>
   );
@@ -56,6 +58,7 @@ export const Start = () => {
 
       <main className='main'>
         <p>Main</p>
+        <Button>Button</Button>
       </main>
 
       <aside className='aside'>

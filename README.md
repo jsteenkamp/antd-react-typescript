@@ -8,3 +8,8 @@ The advantage of using `.less` is that you can use less syntax and gain module l
 
 Using `.css` will keep your CSS in line with the standards. However you will need to add packages to support nesting.
 
+## Netlify
+
+Set env `CI=false` so that TypeScript warnings do no fail build.
+
+[Netlify deployment](https://tangerine-pegasus-42f49f.netlify.app)
