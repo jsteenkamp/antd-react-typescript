@@ -1,22 +1,10 @@
+import { Button } from 'antd';
 import { useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { layoutState } from '../../state/layout';
-import './start.less';
 import styles from './start.module.less';
 
-import { Button, Card } from 'antd';
-
 const PANELS: string[] = ['top', 'bottom', 'left', 'right', 'main'];
-
-const InstaCard = () => (
-  <Card
-    hoverable
-    style={{ width: 240 }}
-    cover={<img alt='example' src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' />}
-  >
-    <Card.Meta title='Europe Street beat' description='www.instagram.com' />
-  </Card>
-);
 
 const PanelButton = ({ panel }: { panel: string }) => {
   const buttonRef = useRef<string[]>([]);
@@ -24,8 +12,8 @@ const PanelButton = ({ panel }: { panel: string }) => {
 
   const togglePanel = (panel) => (event) => {
     event.preventDefault();
+    // store previous panel state on ref - could use Recoil
     if (panel === 'main') {
-      // store previous panel state on ref - could use Recoil
       if (panels.includes('main')) {
         setPanels(buttonRef.current);
         buttonRef.current = [];
@@ -38,12 +26,16 @@ const PanelButton = ({ panel }: { panel: string }) => {
     }
   };
 
-  return <button className={`button-${panel}`} onClick={togglePanel(panel)} />;
+  return (
+    <Button size="small" className={styles[`button-${panel}`]} onClick={togglePanel(panel)}>
+      {panel}
+    </Button>
+  );
 };
 
 const Controls = () => {
   return (
-    <div className='panel-controls' style={{ display: 'flex', gap: '4px' }}>
+    <div className={styles['panel-controls']} style={{ display: 'flex', gap: '4px' }}>
       {PANELS.map((panel) => (
         <PanelButton key={`button-${panel}`} panel={panel} />
       ))}
@@ -53,31 +45,29 @@ const Controls = () => {
 
 export const Start = () => {
   const panels = useRecoilValue(layoutState);
-  const containerStyles = panels.map((panel) => `hide-${panel}`).join(' ');
+  const containerStyles = panels.map((panel) => styles[`hide-${panel}`]).join(' ');
 
   return (
-    <div className={`layout-wrapper ${containerStyles}`}>
+    <div className={`${styles['layout-wrapper']} ${containerStyles}`}>
       <Controls />
-      <header className='header'>
-        <p className={styles.heading}>Header</p>
+      <header className={styles['top']}>
+        <p className={styles.heading}>top</p>
       </header>
 
-      <nav className='nav'>
-        <p>Nav</p>
+      <nav className={styles['left']}>
+        <p>left</p>
       </nav>
 
-      <main className='main'>
-        <p>Main</p>
-        <Button>Button</Button>
-        <InstaCard />
+      <main className={styles['main']}>
+        <p>main</p>
       </main>
 
-      <aside className='aside'>
-        <p>Aside</p>
+      <aside className={styles['right']}>
+        <p>right</p>
       </aside>
 
-      <footer className='footer'>
-        <p>Footer</p>
+      <footer className={styles['bottom']}>
+        <p>bottom</p>
       </footer>
     </div>
   );

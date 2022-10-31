@@ -1,6 +1,6 @@
 import { Route, Switch } from 'wouter';
-import { Start } from './start';
 import { NotFound } from './not-found';
+import { Start } from './start';
 
 export const Views = (): JSX.Element => (
   <Switch>
