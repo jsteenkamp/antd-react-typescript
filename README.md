@@ -1,6 +1,6 @@
 # AntD + React + TypeScript
 
-AntD CSS uses less, this template adds CSS Modules.
+AntD CSS uses LESS, this template adds CSS Modules.
 
 ## CSS
 
@@ -12,7 +12,7 @@ Using `.css` will keep your CSS inline with the standards. However you will need
 
 You can use CSS variables in LESS `var(--color-primary)`.
 
-There are a a number of ways to customize the AntD theme, see the AntD docs for details.
+There are a a number of ways to customize the AntD theme, see the [AntD docs](https://ant.design/docs/react/customize-theme) for details.
 
 ## Netlify
 
