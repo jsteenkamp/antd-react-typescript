@@ -1,4 +1,4 @@
-# AntD + React + TypeScript
+# AntD + React + TypeScript + CSS Modules
 
 AntD CSS uses LESS, this template adds CSS Modules.
 
