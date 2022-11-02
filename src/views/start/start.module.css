@@ -1,19 +1,16 @@
-// Can also use CSS variables var(--my-css-variable)
-// To use AntD variables they need @import here
+:root {
+  --header-height: 75px;
+  --footer-height: 180px;
+  --navbar-width: 80px;
+  --sidebar-width: 460px;
+  --container-border-radius: 12px;
 
-@header-height: 75px;
-@footer-height: 180px;
-@navbar-width: 80px;
-@sidebar-width: 460px;
-@container-border-radius: 12px;
-
-@blue-2: #a5d8ff;
-@gray-0: #f8f9fa;
-@gray-2: #e9ecef;
-@gray-4: #ced4da;
-@gray-5: #adb5bd;
-@indigo-1: #dbe4ff;
-
+  --blue-2: #a5d8ff;
+  --gray-0: #f8f9fa;
+  --gray-2: #e9ecef;
+  --gray-4: #ced4da;
+  --gray-5: #adb5bd;
+  --indigo-1: #dbe4ff;
 .layout-wrapper {
   color: var(--text-color);
 }
@@ -23,7 +20,7 @@
 }
 
 .container {
-  border-radius: @container-border-radius;
+  border-radius: var(--container-border-radius);
   transition: all 0.25s ease, opacity 0.15s ease;
 }
 
@@ -33,61 +30,61 @@
   top: 0;
   right: 0;
   left: 0;
-  height: @header-height;
-  background-color: @blue-2;
+  height: var(--header-height);
+  background-color: var(--blue-2);
 }
 
 .left {
   .container;
   position: absolute;
-  top: @header-height;
-  bottom: @footer-height;
+  top: var(--header-height);
+  bottom: var(--footer-height);
   left: 0;
-  width: @navbar-width;
-  background-color: @gray-2;
+  width: var(--navbar-width);
+  background-color: var(--gray-2);
 }
 
 .main {
   .container;
   position: absolute;
-  top: @header-height;
-  bottom: @footer-height;
-  left: @navbar-width;
-  right: @sidebar-width;
-  background-color: @gray-0;
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  left: var(--navbar-width);
+  right: var(--sidebar-width);
+  background-color: var(--gray-0);
 }
 
 .right {
   .container;
   position: absolute;
-  top: @header-height;
-  bottom: @footer-height;
+  top: var(--header-height);
+  bottom: var(--footer-height);
   right: 0;
-  left: calc(100% - @sidebar-width);
-  background-color: @gray-2;
+  left: calc(100% - var(--sidebar-width));
+  background-color: var(--gray-2);
 }
 
 .bottom {
   .container;
   position: absolute;
   bottom: 0;
-  height: @footer-height;
+  height: var(--footer-height);
   left: 0;
   right: 0;
-  background-color: @blue-2;
+  background-color: var(--blue-2);
 }
 
 /* header */
 
 .show-top .top {
-  height: @header-height;
+  height: var(--header-height);
   opacity: 1;
 }
 
 .show-top .left,
 .show-top .main,
 .show-top .right {
-  top: @footer-height;
+  top: var(--footer-height);
 }
 
 .hide-top .top {
@@ -104,14 +101,14 @@
 /* footer */
 
 .show-bottom .bottom {
-  height: @footer-height;
+  height: var(--footer-height);
   opacity: 1;
 }
 
 .show-bottom .left,
 .show-bottom .main,
 .show-bottom .right {
-  bottom: @footer-height;
+  bottom: var(--footer-height);
 }
 
 .hide-bottom .bottom {
@@ -128,12 +125,12 @@
 /* navbar */
 
 .show-left .left {
-  right: @navbar-width;
+  right: var(--navbar-width);
   opacity: 1;
 }
 
 .show-left .main {
-  left: @navbar-width;
+  left: var(--navbar-width);
 }
 
 .hide-left .left {
@@ -148,7 +145,7 @@
 /* sidebar */
 
 .show-right .right {
-  left: calc(100% - @sidebar-width);
+  left: calc(100% - var(--sidebar-width));
   opacity: 1;
 }
 
@@ -189,7 +186,7 @@
 p {
   margin: 1rem;
   padding: 0.5rem;
-  background-color: @indigo-1;
-  border-radius: @container-border-radius;
+  background-color: var(--indigo-1);
+  border-radius: var(--container-border-radius);
   text-align: center;
 }

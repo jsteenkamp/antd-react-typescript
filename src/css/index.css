@@ -1,9 +1,3 @@
-@import 'base.less';
-
-// check antd docs for customizing
-// @import 'antd.less';
-
-// You can use css variables with LESS var(--text-color)
 
 :root {
   --text-color: #2b2a35;

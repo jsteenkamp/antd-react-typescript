@@ -2,7 +2,7 @@ import { Button } from 'antd';
 import { useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { layoutState } from '../../state/layout';
-import styles from './start.module.less';
+import styles from './start.module.css';
 
 const PANELS: string[] = ['top', 'bottom', 'left', 'right', 'main'];
 
