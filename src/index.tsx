@@ -5,6 +5,7 @@ import { RecoilRoot } from 'recoil';
 import { ErrorFallback, Loading } from './components/common';
 import './css/index.css';
 import { Views } from './views';
+// import 'antd';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

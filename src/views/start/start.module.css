@@ -21,13 +21,14 @@
   font-weight: 600;
 }
 
+/* container "mixin" */
 .container {
   border-radius: var(--container-border-radius);
   transition: all 0.25s ease, opacity 0.15s ease;
 }
 
 .top {
-  .container;
+  composes: container;
   position: absolute;
   top: 0;
   right: 0;
@@ -37,7 +38,7 @@
 }
 
 .left {
-  .container;
+  composes: container;
   position: absolute;
   top: var(--header-height);
   bottom: var(--footer-height);
@@ -47,7 +48,7 @@
 }
 
 .main {
-  .container;
+  composes: container;
   position: absolute;
   top: var(--header-height);
   bottom: var(--footer-height);
@@ -57,7 +58,7 @@
 }
 
 .right {
-  .container;
+  composes: container;
   position: absolute;
   top: var(--header-height);
   bottom: var(--footer-height);
@@ -67,7 +68,7 @@
 }
 
 .bottom {
-  .container;
+  composes: container;
   position: absolute;
   bottom: 0;
   height: var(--footer-height);
