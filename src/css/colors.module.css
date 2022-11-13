@@ -1,0 +1,33 @@
+@value text-color: #2b2a35;
+@value layout-background-color: #fafafe;
+@value layout-background-color-dark: #e9e9ef;
+@value layout-border-color: #e9e9ef;
+@value color-primary: #1890ff;
+@value color-primary-dark: #0082fb;
+@value color-primary-darker: #007bed;
+@value color-primary-darkest: #0065c3;
+@value color-primary-light: #349dff;
+@value color-primary-lighter: #42a4ff;
+@value color-primary-lightest: #6cb8ff;
+
+/*
+Doing this with css variable
+
+:root {
+  --text-color: #2b2a35;
+  --layout-background-color: #fafafe;
+  --layout-background-color-dark: #e9e9ef;
+  --layout-border-color: #e9e9ef;
+  --color-primary: #1890ff;
+  --color-primary-dark: #0082fb;
+  --color-primary-darker: #007bed;
+  --color-primary-darkest: #0065c3;
+  --color-primary-light: #349dff;
+  --color-primary-lighter: #42a4ff;
+  --color-primary-lightest: #6cb8ff;
+}
+
+usage in css
+
+var(--text-color)
+ */
