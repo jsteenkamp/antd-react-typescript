@@ -2,10 +2,20 @@ import { Button } from 'antd';
 import { useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { layoutState } from '../../state/layout';
-import styles from './start.module.css';
+import styles from './start.module.less';
 
 const PANELS: string[] = ['top', 'bottom', 'left', 'right', 'main'];
 
+export const Start = () => {
+  console.log(styles);
+  return (
+    <div className={`${styles['layout-wrapper']}`}>
+      Hello World
+    </div>
+  );
+};
+
+/*
 const PanelButton = ({ panel }: { panel: string }) => {
   const buttonRef = useRef<string[]>([]);
   const [panels, setPanels] = useRecoilState(layoutState);
@@ -72,3 +82,4 @@ export const Start = () => {
     </div>
   );
 };
+*/
