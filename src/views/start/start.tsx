@@ -27,7 +27,7 @@ const PanelButton = ({ panel }: { panel: string }) => {
   };
 
   return (
-    <Button size="small" className={styles[`button-${panel}`]} onClick={togglePanel(panel)}>
+    <Button size='small' className={styles[`button-${panel}`]} onClick={togglePanel(panel)}>
       {panel}
     </Button>
   );
@@ -45,10 +45,12 @@ const Controls = () => {
 
 export const Start = () => {
   const panels = useRecoilValue(layoutState);
-  const containerStyles = panels.map((panel) => styles[`hide-${panel}`]).join(' ');
+  const containerStyles = `${styles['layout-wrapper']} ${panels
+    .map((panel) => styles[`hide-${panel}`])
+    .join(' ')}`.trim();
 
   return (
-    <div className={`${styles['layout-wrapper']} ${containerStyles}`}>
+    <div className={containerStyles}>
       <Controls />
       <header className={styles['top']}>
         <p className={styles.heading}>top</p>
@@ -72,4 +74,3 @@ export const Start = () => {
     </div>
   );
 };
-

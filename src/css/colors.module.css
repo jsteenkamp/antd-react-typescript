@@ -9,6 +9,7 @@
 @value color-primary-light: #349dff;
 @value color-primary-lighter: #42a4ff;
 @value color-primary-lightest: #6cb8ff;
+@value colorRed: red;
 
 /*
 Doing this with css variable
