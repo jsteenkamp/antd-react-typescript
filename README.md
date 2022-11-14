@@ -1,20 +1,18 @@
-# AntD + React + TypeScript + CSS Modules
+# AntD v5 + React + TypeScript + CSS Modules
 
-AntD CSS uses LESS, this template adds CSS Modules.
+[AntD v5](https://next.ant.design/) replaces LESS with CSS-in-JS. This template adds CSS Modules.
 
 [Demo](https://tangerine-pegasus-42f49f.netlify.app)
 
 ## CSS
 
-CSS Modules files can be `.less` or `.css`. 
-
-The advantage of using `.less` is that you can use LESS syntax and gain module level style scoping.
+CSS Modules files use `.module.css` naming. 
 
 Using `.css` will keep your CSS inline with the CSS standard. However you will need to add packages to support functionality like nesting.
 
-You can use CSS variables `var(--color-primary)` in LESS.
+## Path Aliases
 
-There are a a number of ways to customize the AntD theme, see the [AntD docs](https://ant.design/docs/react/customize-theme) for details.
+These are set in `craco.config.js` and `tsconfig.json` and allow importing with path alias like `@components`.
 
 ## Netlify
 

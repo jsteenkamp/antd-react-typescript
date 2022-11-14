@@ -27,7 +27,7 @@
   transition: all 0.25s ease, opacity 0.15s ease;
 }
 
-.top {
+.panel-top {
   composes: container;
   position: absolute;
   top: 0;
@@ -37,7 +37,7 @@
   background-color: blue-2;
 }
 
-.left {
+.panel-left {
   composes: container;
   position: absolute;
   top: header-height;
@@ -47,7 +47,7 @@
   background-color: gray-2;
 }
 
-.main {
+.panel-main {
   composes: container;
   position: absolute;
   top: header-height;
@@ -57,7 +57,7 @@
   background-color: gray-0;
 }
 
-.right {
+.panel-right {
   composes: container;
   position: absolute;
   top: header-height;
@@ -67,7 +67,7 @@
   background-color: gray-2;
 }
 
-.bottom {
+.panel-bottom {
   composes: container;
   position: absolute;
   bottom: 0;
@@ -79,89 +79,90 @@
 
 /* header */
 
-.show-top .top {
+.show-top .panel-top {
   height: header-height;
   opacity: 1;
 }
 
-.show-top .left,
-.show-top .main,
-.show-top .right {
+.show-top .panel-left,
+.show-top .panel-main,
+.show-top .panel-right {
   top: footer-height;
 }
 
-.hide-top .top {
+.hide-top .panel-top {
   height: 0;
   opacity: 0;
 }
 
-.hide-top .left,
-.hide-top .main,
-.hide-top .right {
+.hide-top .panel-left,
+.hide-top .panel-main,
+.hide-top .panel-right {
   top: 0;
 }
 
+
 /* footer */
 
-.show-bottom .bottom {
+.show-bottom .panel-bottom {
   height: footer-height;
   opacity: 1;
 }
 
-.show-bottom .left,
-.show-bottom .main,
-.show-bottom .right {
+.show-bottom .panel-left,
+.show-bottom .panel-main,
+.show-bottom .panel-right {
   bottom: footer-height;
 }
 
-.hide-bottom .bottom {
+.hide-bottom .panel-bottom {
   height: 0;
   opacity: 0;
 }
 
-.hide-bottom .left,
-.hide-bottom .main,
-.hide-bottom .right {
+.hide-bottom .panel-left,
+.hide-bottom .panel-main,
+.hide-bottom .panel-right {
   bottom: 0;
 }
 
 /* navbar */
 
-.show-left .left {
+.show-left .panel-left {
   right: navbar-width;
   opacity: 1;
 }
 
-.show-left .main {
+.show-left .panel-main {
   left: navbar-width;
 }
 
-.hide-left .left {
+.hide-left .panel-left {
   right: 0;
   opacity: 0;
 }
 
-.hide-left .main {
+.hide-left .panel-main {
   left: 0;
 }
 
 /* sidebar */
 
-.show-right .right {
+.show-right .panel-right {
   left: calc(100% - sidebar-width);
   opacity: 1;
 }
 
-.show-right .main {
+.show-right .panel-main {
   right: 460px;
 }
 
-.hide-right .right {
+.hide-right .panel-right {
   left: 100vw;
   opacity: 0;
 }
 
-.hide-right .main {
+.hide-right .panel-main {
   right: 0;
 }
 
@@ -172,9 +173,11 @@
   bottom: 16px;
   right: 16px;
   z-index: 100;
-  padding: 12px;
+  padding: 8px;
   background-color: rgba(169, 169, 169, 0.28);
   border-radius: 6px;
+  display: flex;
+  gap: 8px;
 }
 
 .hide-main .button-top,

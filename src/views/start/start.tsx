@@ -1,47 +1,7 @@
-import { Button } from 'antd';
-import { useRef } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { layoutState } from '../../state/layout';
+import { layoutState } from '@state/layout';
+import { useRecoilValue } from 'recoil';
+import { PanelControls } from './panel-controls';
 import styles from './start.module.css';
-
-const PANELS: string[] = ['top', 'bottom', 'left', 'right', 'main'];
-
-const PanelButton = ({ panel }: { panel: string }) => {
-  const buttonRef = useRef<string[]>([]);
-  const [panels, setPanels] = useRecoilState(layoutState);
-
-  const togglePanel = (panel) => (event) => {
-    event.preventDefault();
-    // store previous panel state on ref - could use Recoil
-    if (panel === 'main') {
-      if (panels.includes('main')) {
-        setPanels(buttonRef.current);
-        buttonRef.current = [];
-      } else {
-        buttonRef.current = panels;
-        setPanels(PANELS);
-      }
-    } else {
-      setPanels((hide) => (hide.includes(panel) ? hide.filter((value) => value !== panel) : [...hide, panel]));
-    }
-  };
-
-  return (
-    <Button size='small' className={styles[`button-${panel}`]} onClick={togglePanel(panel)}>
-      {panel}
-    </Button>
-  );
-};
-
-const Controls = () => {
-  return (
-    <div className={styles['panel-controls']} style={{ display: 'flex', gap: '4px' }}>
-      {PANELS.map((panel) => (
-        <PanelButton key={`button-${panel}`} panel={panel} />
-      ))}
-    </div>
-  );
-};
 
 export const Start = () => {
   const panels = useRecoilValue(layoutState);
@@ -51,24 +11,24 @@ export const Start = () => {
 
   return (
     <div className={containerStyles}>
-      <Controls />
-      <header className={styles['top']}>
+      <PanelControls />
+      <header className={styles['panel-top']}>
         <p className={styles.heading}>top</p>
       </header>
 
-      <nav className={styles['left']}>
+      <nav className={styles['panel-left']}>
         <p>left</p>
       </nav>
 
-      <main className={styles['main']}>
+      <main className={styles['panel-main']}>
         <p>main</p>
       </main>
 
-      <aside className={styles['right']}>
+      <aside className={styles['panel-right']}>
         <p>right</p>
       </aside>
 
-      <footer className={styles['bottom']}>
+      <footer className={styles['panel-bottom']}>
         <p>bottom</p>
       </footer>
     </div>
