@@ -1,4 +1,6 @@
-export const ErrorFallback = ({ error, resetErrorBoundary }: { error?: any; resetErrorBoundary?: any }) => {
+import { FallbackProps } from 'react-error-boundary';
+
+export const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   return (
     <div role='alert'>
       <p>Something went wrong:</p>

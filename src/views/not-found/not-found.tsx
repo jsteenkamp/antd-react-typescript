@@ -1,4 +1,4 @@
-import styles from './not-found.module.less';
+import styles from './not-found.module.css';
 
 export const NotFound = () => (
   <div className={styles['container']}>
